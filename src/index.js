@@ -38,6 +38,7 @@ async function run() {
     const versionFile = core.getInput('version-file')
     const versionPath = core.getInput('version-path')
     const skipGitPull = core.getBooleanInput('skip-git-pull')
+    const skipTag = core.getBooleanInput('skip-tag')
     const skipVersionFile = core.getBooleanInput('skip-version-file')
     const skipCommit = core.getBooleanInput('skip-commit')
     const skipEmptyRelease = core.getBooleanInput('skip-on-empty')
@@ -186,8 +187,12 @@ async function run() {
         await git.commit(gitCommitMessage.replace('{version}', gitTag))
       }
 
-      // Create the new tag
-      await git.createTag(gitTag)
+      if (!skipTag) {
+        // Create the new tag
+        await git.createTag(gitTag)
+      } else {
+        core.info('Do not create tag to remote repository')
+      }
 
       if (gitPush) {
         try {

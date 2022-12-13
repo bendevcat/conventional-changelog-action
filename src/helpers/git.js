@@ -93,7 +93,7 @@ module.exports = new (class Git {
    * @return {Promise<>}
    */
   commit = (message) => (
-    this.exec(`commit -m "${message}"`)
+    this.exec(`commit --amend --no-edit`)
   )
 
   /**
@@ -121,7 +121,7 @@ module.exports = new (class Git {
    * @return {Promise<>}
    */
   push = (branch) => (
-    this.exec(`push origin ${branch} --follow-tags`)
+    this.exec(`push origin ${branch} -f --follow-tags`)
   )
 
   /**

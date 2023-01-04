@@ -1,8 +1,9 @@
-# [4.1.0](https://github.com/TriPSs/conventional-changelog-action/compare/v4.0.0...v4.1.0) (2022-12-13)
+# [4.2.0](https://github.com/TriPSs/conventional-changelog-action/compare/v4.1.0...v4.2.0) (2023-01-04)
 
 
 ### Features
 
+* do not force push ([e0bf6f3](https://github.com/TriPSs/conventional-changelog-action/commit/e0bf6f3b8752140f7e553335a72395d10c179065))
 * git commit amend instead of new commit and force push ([8ec2c9d](https://github.com/TriPSs/conventional-changelog-action/commit/8ec2c9d37be30076089f73d318a6ba3345d8e8cb))
 
 
